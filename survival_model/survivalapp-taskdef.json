@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:601159397218:task-definition/survival_prediction_app:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:601159397218:task-definition/survival-app:1",
     "containerDefinitions": [
         {
             "name": "survival_prediction_app",
