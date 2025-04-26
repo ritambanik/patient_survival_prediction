@@ -2,9 +2,6 @@ import sys
 from pathlib import Path
 file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[2]
-
-print("Parent Directory:", root)
-
 sys.path.append(str(root))
 
 import pickle
@@ -13,12 +10,9 @@ import numpy as np
 import pandas as pd
 import os
 
-from survival_model.config.core import TRAINED_MODEL_DIR, config
-from survival_model import __version__ as _version
 
 def load_model():
-    save_file_name = f"{config.app_config_.pipeline_save_file}{_version}.pkl"
-    model_path = TRAINED_MODEL_DIR / save_file_name
+    model_path = "./patient_survival_model_output_v0.0.1.pkl"
     if os.path.exists(model_path):
         with open(model_path, 'rb') as file:
             model = pickle.load(file)
@@ -36,16 +30,18 @@ except Exception as e:
     model_loaded = False
     model = None
     
-    
+
 def predict_death_event(age, anaemia, creatinine_phosphokinase, diabetes,
        ejection_fraction, high_blood_pressure, platelets,
        serum_creatinine, serum_sodium, sex, smoking, time) -> int:
     
+    print("Loading model...")
+    
     if not model_loaded:
         return "Model not loaded. Please check if the model file exists."
     
-    """Make a prediction using a saved model """
     
+    """Make a prediction using a saved model """
 
     input_data = {
         'age': [age],
