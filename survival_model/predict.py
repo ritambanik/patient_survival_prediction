@@ -17,7 +17,7 @@ from survival_model.processing.validation import validate_inputs
 pipeline_file_name = f"{config.app_config_.pipeline_save_file}{_version}.pkl"
 survival_pipe = load_pipeline(file_name = pipeline_file_name)
 
-def make_prediction(*, input_data: Union[pd.DataFrame, dict]) -> dict:
+def predict_death_event(*, input_data: Union[pd.DataFrame, dict]) -> dict:
     """Make a prediction using a saved model """
     
     validated_data, errors = validate_inputs(input_df = pd.DataFrame(input_data))
@@ -48,4 +48,4 @@ if __name__ == "__main__":
             'smoking': [0],
             'time': [8]
     }
-    make_prediction(input_data = data_in)
+    predict_death_event(input_data = data_in)
