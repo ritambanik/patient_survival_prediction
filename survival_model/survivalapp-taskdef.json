@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:160224865545:task-definition/usedcar-app-v1:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:601159397218:task-definition/survival_prediction_app:1",
     "containerDefinitions": [
         {
             "name": "survival_prediction_app",
-            "image": "ritambanik/survival-app:0.0.1",
+            "image": "601159397218.dkr.ecr.us-east-1.amazonaws.com/ritambanik/survival-app",
             "cpu": 0,
             "portMappings": [
                 {
@@ -16,12 +16,14 @@
             ],
             "essential": true,
             "environment": [],
+            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
+            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/sample-fargate-1",
+                    "awslogs-group": "/ecs/survival_prediction_app",
                     "mode": "non-blocking",
                     "awslogs-create-group": "true",
                     "max-buffer-size": "25m",
@@ -34,8 +36,7 @@
         }
     ],
     "family": "survival_prediction_app",
-    "taskRoleArn": "arn:aws:iam::160224865545:role/ecsTaskExecutionRole",
-    "executionRoleArn": "arn:aws:iam::160224865545:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::601159397218:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
     "volumes": [],
@@ -48,16 +49,19 @@
             "name": "ecs.capability.execution-role-awslogs"
         },
         {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
         },
         {
-            "name": "com.amazonaws.ecs.capability.task-iam-role"
+            "name": "ecs.capability.fault-injection"
         },
         {
-            "name": "ecs.capability.extensible-ephemeral-storage"
+            "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
@@ -79,20 +83,12 @@
     ],
     "cpu": "1024",
     "memory": "3072",
-    "ephemeralStorage": {
-        "sizeInGiB": 21
-    },
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-04-23T02:30:59.759Z",
-    "registeredBy": "arn:aws:iam::160224865545:root",
-    "enableFaultInjection": false,
-    "tags": [
-        {
-            "key": "project",
-            "value": "survival_prediction_app"
-        }
-    ]
+    "registeredAt": "2025-04-26T21:10:27.222Z",
+    "registeredBy": "arn:aws:sts::601159397218:assumed-role/AWSReservedSSO_AdministratorAccess_dd7e239fd5d2bbaf/2416708",
+    "enableFaultInjection": true,
+    "tags": []
 }
