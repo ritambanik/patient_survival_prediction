@@ -34,7 +34,7 @@ jobs:
     
       - name: Train the used car model and create the pkl file
         run: |
-          python usedcar_model/train_pipeline.py
+          python survival_model/train_pipeline.py
 
       - name: Generate wheel file
         run: |
