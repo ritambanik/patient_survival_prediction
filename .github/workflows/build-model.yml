@@ -6,11 +6,17 @@ on:
     branches:
       - main
       - develop
+    paths:
+      - 'survival_model/**'
+      - '.github/workflows/build-model.yml'
   pull_request:
     branches:
       - main
       - develop
-
+    paths:
+      - 'survival_model/**'
+      - '.github/workflows/build-model.yml'
+    
 jobs:
   build:
     runs-on: ubuntu-latest
