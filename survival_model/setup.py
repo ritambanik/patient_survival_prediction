@@ -22,9 +22,9 @@ long_description = DESCRIPTION
 
 # Load the package's VERSION file as a dictionary.
 about = {}
-ROOT_DIR = Path(__file__).resolve().parents[1]
+ROOT_DIR = Path(__file__).resolve().parent
 print(f'ROOT_DIR = {ROOT_DIR}')
-PACKAGE_DIR = ROOT_DIR / 'survival_model'
+PACKAGE_DIR = ROOT_DIR
 with open(PACKAGE_DIR / "VERSION") as f:
     _version = f.read().strip()
     about["__version__"] = _version
