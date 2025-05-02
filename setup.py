@@ -24,6 +24,7 @@ long_description = DESCRIPTION
 about = {}
 ROOT_DIR = Path(__file__).resolve().parent
 print(f'ROOT_DIR = {ROOT_DIR}')
+REQUIREMENTS_DIR = ROOT_DIR / 'requirements'
 PACKAGE_DIR = ROOT_DIR / 'survival_model'
 with open(PACKAGE_DIR / "VERSION") as f:
     _version = f.read().strip()
@@ -31,7 +32,6 @@ with open(PACKAGE_DIR / "VERSION") as f:
 
 
 # What packages are required for this module to be executed?
-REQUIREMENTS_DIR = ROOT_DIR / 'requirements'
 def list_reqs(fname="requirements.txt"):
     with open(REQUIREMENTS_DIR / fname) as fd:
         return fd.read().splitlines()
