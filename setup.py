@@ -31,7 +31,7 @@ with open(PACKAGE_DIR / "VERSION") as f:
 
 
 # What packages are required for this module to be executed?
-REQUIREMENTS_DIR = PACKAGE_DIR / 'requirements'
+REQUIREMENTS_DIR = ROOT_DIR / 'requirements'
 def list_reqs(fname="requirements.txt"):
     with open(REQUIREMENTS_DIR / fname) as fd:
         return fd.read().splitlines()
