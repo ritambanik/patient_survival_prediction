@@ -17,7 +17,7 @@ from survival_model.predict import predict_death_event
 from app import __version__, schemas
 from app.config import settings
 
-import promethues_client as prom
+import prometheus_client as prom
 from survival_model.config.core import config
 from survival_model.processing.data_manager import load_dataset
 from sklearn.metrics import accuracy_score, f1_score
