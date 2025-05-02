@@ -1,0 +1,10 @@
+include *.txt
+include *.md
+include *.pkl
+recursive-include ./survival_model *
+
+exclude *.log
+exclude *.cfg
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

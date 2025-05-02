@@ -24,7 +24,7 @@ long_description = DESCRIPTION
 about = {}
 ROOT_DIR = Path(__file__).resolve().parent
 print(f'ROOT_DIR = {ROOT_DIR}')
-PACKAGE_DIR = ROOT_DIR
+PACKAGE_DIR = ROOT_DIR / 'survival_model'
 with open(PACKAGE_DIR / "VERSION") as f:
     _version = f.read().strip()
     about["__version__"] = _version
