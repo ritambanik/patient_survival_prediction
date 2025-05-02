@@ -78,11 +78,11 @@ accuracy_metric = prom.Gauge('patient_survival_accuracy_score', 'Accuracy score 
 def update_metrics(): 
     test = test_data.sample(100) 
     test_feat = test.drop(config.model_config_.target, axis=1) 
-    test_cnt = test[config.model_config_.target].values 
+    test_target = test[config.model_config_.target].values
     test_pred = predict_death_event(input_data=test_feat)['predictions'] 
-    accuracy = accuracy_score(test_cnt, test_pred).round(3) 
+    accuracy = accuracy_score(test_target, test_pred).round(3) 
     accuracy_metric.set(accuracy)
-    f1 = f1_score(test_cnt, test_pred, average='weighted').round(3)
+    f1 = f1_score(test_target, test_pred, average='weighted').round(3)
     f1_metric.set(f1)
 
 

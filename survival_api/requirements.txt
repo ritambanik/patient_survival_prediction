@@ -3,5 +3,5 @@ fastapi>=0.64.0,<1.0.0
 requests>=2.23.0,<2.24.0
 pydantic
 pydantic-settings
-survival_model
+survival_model==0.0.2
 prometheus-client
