@@ -9,6 +9,8 @@ WORKDIR /code
 # Copy the requirements file into the container
 COPY ./requirements.txt /code/requirements.txt
 
+COPY ./survivival_model-0.0.1-py3-none-any.whl /code/survivival_model-0.0.1-py3-none-any.whl
+
 # Install the dependencies
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 RUN pip install fastapi[standard] uvicorn
