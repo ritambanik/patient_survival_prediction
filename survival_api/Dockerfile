@@ -13,8 +13,6 @@ COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 RUN pip install fastapi[standard] uvicorn
 
-# Copy the rest of the application code into the container
-COPY ../../survival_model /code/app/survival_model
 
 # Copy the rest of the application code into the container
 COPY ./app /code/app
