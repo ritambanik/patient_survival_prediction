@@ -42,7 +42,7 @@ jobs:
       - name: Generate wheel file
         run: |
           pip install --upgrade build
-          python -m build survival_model/ -o dist/
+          python -m build -o dist/
 
       - name: Upload wheel file
         uses: actions/upload-artifact@v4
