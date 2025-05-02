@@ -67,6 +67,7 @@ jobs:
           path: dist/
 
       - name: Set the model version as an environment variable
+        if: false
         id: set-version
         run: |
           VER=$(cat ./survival_model/VERSION)
@@ -87,4 +88,4 @@ jobs:
             context: ./survival_api
             file: ./survival_api/Dockerfile
             push: true
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/patient-survival-app:${{ steps.set-version.outputs.version }}
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/patient-survival-app:latest
