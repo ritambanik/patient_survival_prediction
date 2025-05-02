@@ -38,7 +38,7 @@ class DataInputSchema(BaseModel):
     diabetes: Optional[int]
     ejection_fraction: Optional[int]
     high_blood_pressure: Optional[int]
-    platelets: Optional[int]
+    platelets: Optional[float]
     serum_creatinine: Optional[float]
     serum_sodium: Optional[int]
     sex: Optional[int]
