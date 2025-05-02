@@ -56,7 +56,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
-            context: ./patient_survival_prediction/survival_api
-            file: ./patient_survival_prediction/survival_api/Dockerfile
+            context: ./survival_api
+            file: ./survival_api/Dockerfile
             push: true
             tags: ${{ secrets.DOCKERHUB_USERNAME }}/patient-survival-app:latest
