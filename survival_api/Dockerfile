@@ -7,14 +7,14 @@ WORKDIR /code
 
 
 # Copy the requirements file into the container
-COPY ./survival_api/requirements.txt /code/requirements.txt
+COPY ./requirements.txt /code/requirements.txt
 
 # Install the dependencies
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 RUN pip install fastapi[standard] uvicorn
 
 # Copy the rest of the application code into the container
-COPY ./survival_api/app /code/app
+COPY ./app /code/app
 
 # Expose the port the app runs on
 EXPOSE 8000
