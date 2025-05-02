@@ -1,8 +1,10 @@
 import sys
 from pathlib import Path
+
 file = Path(__file__).resolve()
-parent, root = file.parent, file.parents[1]
+parent, root, survival_model_path = file.parent, file.parents[1], file.parents[2]
 sys.path.append(str(root))
+sys.path.append(str(survival_model_path))
 
 import json
 from typing import Any
