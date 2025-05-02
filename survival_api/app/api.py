@@ -12,7 +12,7 @@ import pandas as pd
 from fastapi import APIRouter, HTTPException, Body
 from fastapi.encoders import jsonable_encoder
 from survival_model import __version__ as model_version
-from survival_model.predict import make_prediction
+from survival_model.predict import predict_death_event
 
 from app import __version__, schemas
 from app.config import settings
@@ -58,7 +58,7 @@ async def predict(input_data: schemas.MultipleDataInputs = Body(..., example=exa
 
     input_df = pd.DataFrame(jsonable_encoder(input_data.inputs))
     
-    results = make_prediction(input_data=input_df.replace({np.nan: None}))
+    results = predict_death_event(input_data=input_df.replace({np.nan: None}))
 
     if results["errors"] is not None:
         raise HTTPException(status_code=400, detail=json.loads(results["errors"]))
