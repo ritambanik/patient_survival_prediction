@@ -69,7 +69,7 @@ jobs:
       - name: Set the model version as an environment variable
         id: set-version
         run: |
-          VER=$(cat survival_model/VERSION)
+          VER=$(cat ./survival_model/VERSION)
           echo "VERSION=$VER" >> $GITHUB_OUTPUT
       
       - name: Set up Docker Buildx
