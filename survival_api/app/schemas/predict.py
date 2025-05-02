@@ -6,8 +6,8 @@ from pydantic import BaseModel
 class PredictionResults(BaseModel):
     errors: Optional[Any]
     version: str
-    #predictions: Optional[List[int]]
-    predictions: Optional[int]
+    predictions: Optional[List[int]]
+    
 
 
 class DataInputSchema(BaseModel):

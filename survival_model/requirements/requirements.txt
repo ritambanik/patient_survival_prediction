@@ -7,4 +7,3 @@ ruamel.yaml==0.18.10
 scikit-learn==1.6.1
 strictyaml==1.7.3
 gradio
-prometheus-client
