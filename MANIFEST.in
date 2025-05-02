@@ -3,6 +3,8 @@ include *.md
 include *.pkl
 recursive-include ./survival_model *
 
+include ./requirements/requirements.txt
+
 exclude *.log
 exclude *.cfg
 
