@@ -82,9 +82,9 @@ def update_metrics():
     test_feat = test.drop(config.model_config_.target, axis=1) 
     test_target = test[config.model_config_.target].values
     test_pred = predict_death_event(input_data=test_feat)['predictions'] 
-    accuracy = accuracy_score(test_target, test_pred).round(3) 
+    accuracy = round(accuracy_score(test_target, test_pred), 3)
     accuracy_metric.set(accuracy)
-    f1 = f1_score(test_target, test_pred, average='weighted').round(3)
+    f1 = round(f1_score(test_target, test_pred, average='weighted'),3)
     f1_metric.set(f1)
 
 
